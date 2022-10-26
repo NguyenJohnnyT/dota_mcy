@@ -29,18 +29,26 @@ const App: React.FC = () => {
     startFetching();
 
     return () => {
-      console.log(data);
       ignore = true;
     };
   }, []);
 
   return (
-    <>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 3fr" }}>
       {data &&
         data.map((team, index) => {
-          return <h3>{`${index + 1}: ${JSON.stringify(team)}`}</h3>;
+          return (
+            <>
+              <div style={{ backgroundColor: "lightgray" }}>
+                <h3>{`${index + 1}: ${team.name}`}</h3>
+              </div>
+              <div style={{ backgroundColor: "grey" }}>
+                <img src={team.logo_url} />
+              </div>
+            </>
+          );
         })}
-    </>
+    </div>
   );
 };
 
