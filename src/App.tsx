@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
 
+type TeamInfo = {
+  team_id: number;
+  rating: number;
+  wins: number;
+  losses: number;
+  last_match_time: number;
+  name: string;
+  tag: string;
+  logo_url: string;
+};
+
 const App: React.FC = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<TeamInfo[]>([]);
 
   useEffect(() => {
     let ignore = false;
