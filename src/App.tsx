@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react  */
 import React, { useEffect, useState } from "react";
 
 type TeamInfo = {
@@ -34,15 +35,15 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 3fr" }}>
+    <div css={{ display: "grid", gridTemplateColumns: "1fr 4fr" }}>
       {data &&
         data.map((team, index) => {
           return (
             <>
-              <div style={{ backgroundColor: "lightgray" }}>
+              <div css={{ backgroundColor: "lightgray" }}>
                 <h3>{`${index + 1}: ${team.name}`}</h3>
               </div>
-              <div style={{ backgroundColor: "grey" }}>
+              <div css={{ backgroundColor: "grey" }}>
                 <img src={team.logo_url} />
               </div>
             </>
